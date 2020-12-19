@@ -5,6 +5,7 @@ import { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, Row, Col, Label } from "reactstrap";
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import { Loading } from './LoadingComponent';
+import { baseUrl } from '../shared/baseUrl';
 
 
 const minLength = (len) => (val) => val && (val.length >= len);
@@ -90,7 +91,7 @@ class CommentForm extends Component {
         if(dish != null){
             return(
                 <Card>
-                    <CardImg top src={dish.image} alt={dish.name} />
+                    <CardImg top src={baseUrl + dish.image} alt={dish.name} />
                     <CardBody>
                         <CardTitle>{dish.name}</CardTitle>
                         <CardText>{dish.description}</CardText>
